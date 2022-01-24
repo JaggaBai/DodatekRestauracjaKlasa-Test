@@ -7,16 +7,16 @@ namespace DodatekRestauracjaKlasa_Test.KlasaDoTestu
 {
     public class ObsługaZamównień
     {
-        public User Wykonujący { get; set; }
-        public bool Odwołaj(User user)
+        public Składający Wykonujący { get; set; }
+        public bool Odwołaj(Składający składający)
         {
-            if (user.IsAdmin)
+            if (składający.IsAdmin)
                 return true;
-            if (Wykonujący == user)
+            if (Wykonujący == składający)
               return true;
             return false;
         }
-        public class User
+        public class Składający
         {
             public bool IsAdmin { get; set; }
         }

@@ -8,30 +8,30 @@ namespace DodatekRestauracja.xUnitTest_s_
     public class Obs³ugaZamówieñTests
     {
         [Fact]
-        public void Odwo³aj_isAdmin_returnsTrue()
+        public void Odwo³aj_isAdmin_True()
         {
             var oz = new Obs³ugaZamównieñ();
 
-            var res = oz.Odwo³aj(new User { IsAdmin = true });
+            var res = oz.Odwo³aj(new Sk³adaj¹cy { IsAdmin = true });
 
             Assert.True(res);
         }
         [Fact]
-        public void Odwo³aj_User_returnsTrue()
+        public void Odwo³aj_Sk³adaj¹cy_True()
         {
-            var user = new User();
-            var oz2 = new Obs³ugaZamównieñ { Wykonuj¹cy = user };
+            var sk³adaj¹cy = new Sk³adaj¹cy();
+            var oz2 = new Obs³ugaZamównieñ { Wykonuj¹cy = sk³adaj¹cy };
 
-            var res2 = oz2.Odwo³aj(user);
+            var res2 = oz2.Odwo³aj(sk³adaj¹cy);
 
             Assert.True(res2);
         }
         [Fact]
-        public void Odwo³aj_NieuprawnionyUser_returnsFalse()
+        public void Odwo³aj_NieuprawnionySk³adaj¹cy_False()
         {
-            var oz3 = new Obs³ugaZamównieñ { Wykonuj¹cy = new User()};
+            var oz3 = new Obs³ugaZamównieñ { Wykonuj¹cy = new Sk³adaj¹cy()};
 
-            var res3 = oz3.Odwo³aj(new User());
+            var res3 = oz3.Odwo³aj(new Sk³adaj¹cy());
 
             Assert.False(res3);
         }
