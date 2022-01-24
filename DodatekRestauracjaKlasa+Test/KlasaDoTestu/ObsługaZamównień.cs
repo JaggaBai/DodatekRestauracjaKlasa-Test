@@ -12,7 +12,8 @@ namespace DodatekRestauracjaKlasa_Test.KlasaDoTestu
         {
             if (user.IsAdmin)
                 return true;
-           
+            if (Wykonujący == user)
+              return true;
             return false;
         }
         public class User
